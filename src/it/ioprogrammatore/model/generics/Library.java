@@ -22,14 +22,16 @@ public class Library<T extends Media> {
         }
     }
 
+    // With wildcard
     public void printTitles(List<? extends Media> mediaList) {
         for (Media media : mediaList) {
             System.out.println("Title: " + media.getTitle());
         }
     }
 
-    public void printMediaDetails(List<? extends Media> mediaList) {
-        for (Media media : mediaList) {
+    // With basic generics
+    public <P extends Media> void printMediaDetails(List<P> mediaList) {
+        for (P media : mediaList) {
             System.out.println(media);
         }
     }
